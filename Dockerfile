@@ -17,21 +17,3 @@ EXPOSE 8888
 VOLUME /DS_PROJECTS
 # Copy requirements.txt (if any) and install project dependencies
 COPY requirements.txt /DS_PROJECTS/requirements.txt
-WORKDIR /DS_PROJECTS
-
-RUN pip install -r requirements.txt
-
-# Remove unnecessary packages (optional)
-# RUN apk del build-base
-
-
-# docker run -i -t -p 8888:8888 -v /home/tiago/Documentos/DS_PROJECTS/notebooks:/opt/notebooks 695005fc2b26 /bin/bash -c "\
-#     jupyter notebook \
-#     --notebook-dir=/opt/notebooks --ip='*' --port=8888 \
-#     --no-browser --allow-root"
-
-
-# docker run -i -t -p 8888:8888 -v /home/tiago/Documentos/DS_PROJECTS:/opt/notebooks 695005fc2b26 /bin/bash -c "\
-#     jupyter notebook \
-#     --ip='*' --port=8888 \
-#     --no-browser --allow-root"
